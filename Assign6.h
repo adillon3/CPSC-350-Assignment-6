@@ -10,6 +10,7 @@ using namespace std;
 
 #include <string>
 #include <fstream>
+#include <iomanip>
 #include <ctime>
 
 string GetFileName();
@@ -22,3 +23,6 @@ void GenerateRandomValuesForArray(float *&array, int numberOfValues);
 void CreateArrayFromFile(float *&array, int &arraySize, string fileName);
 void PrintDynamicArray(string arrayName, float *&array, int arraySize);
 void CopyArray(float *&origionalArray, int arraySize, float *&duplicateArray);
+double CalcTotalTime(double startTime, double endTime);
+void UpdateFastestAndSlowest(double newTime, double &fastestTime, double &slowestTime,
+                string newSortName, string &fastestSortName, string &slowestSortName);

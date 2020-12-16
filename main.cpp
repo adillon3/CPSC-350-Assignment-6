@@ -19,14 +19,21 @@
 
    bool printArrayBool = false;
    int menuChoice = 1;// 1 by default, for reading files
+   clock_t startTime;
+   clock_t endTime;
+   double totalTime   = 0;
+   double fastestTime = 0;
+   double slowestTime = 0;
+   string fastestSortName;
+   string slowestSortName;
 
+   //Array variables
    int    arraySize      = 0;
    float* bubbleArray    = nullptr;
    float* insertArray    = nullptr;
    float* selectionArray = nullptr;
    float* mergeArray     = nullptr;
    float* quickArray     = nullptr;
-
    string fileName;
 
    //Getting input if commandline is blank
@@ -78,36 +85,80 @@
    }
 
 
+
+
    cout << "Now running Bubble Sort\n";
-   cout << " - Start: " << endl;
+   startTime = clock();
+   cout << " - Start: " << to_string(startTime) << endl << endl;
+   cout << "    sorting...\n\n";
    BubbleSort(bubbleArray, arraySize);
-   cout << " - End:   " << endl << endl;
+   endTime = clock();
+   cout << " - End:   " << to_string(endTime) << endl;
+   totalTime = CalcTotalTime(startTime, endTime);
+   cout << "Total time elapsed: " << totalTime << " seconds\n\n\n";
+   UpdateFastestAndSlowest(totalTime, fastestTime, slowestTime, "Bubble Sort",
+                            fastestSortName, slowestSortName);
 
    cout << "Now running Selection Sort\n";
-   cout << " - Start: " << endl;
+   startTime = clock();
+   cout << " - Start: " << to_string(startTime) << endl << endl;
+   cout << "    sorting...\n\n";
    SelectionSort(selectionArray, arraySize);
-   cout << " - End:   " << endl << endl;
+   endTime = clock();
+   cout << " - End:   " << to_string(endTime) << endl;
+   totalTime = CalcTotalTime(startTime, endTime);
+   cout << "Total time elapsed: " << totalTime << " seconds\n\n\n";
+   UpdateFastestAndSlowest(totalTime, fastestTime, slowestTime, "Selection Sort",
+                            fastestSortName, slowestSortName);
 
    cout << "Now running Insertion Sort\n";
-   cout << " - Start: " << endl;
+   startTime = clock();
+   cout << " - Start: " << to_string(startTime) << endl << endl;
+   cout << "    sorting...\n\n";
    InsertionSort(insertArray, arraySize);
-   cout << " - End:   " << endl << endl;
+   endTime = clock();
+   cout << " - End:   " << to_string(endTime) << endl;
+   totalTime = CalcTotalTime(startTime, endTime);
+   cout << "Total time elapsed: " << totalTime << " seconds\n\n\n";
+   UpdateFastestAndSlowest(totalTime, fastestTime, slowestTime, "Insertion Sort",
+                            fastestSortName, slowestSortName);
 
    cout << "Now running Merge Sort\n";
-   cout << " - Start: " << endl;
+   startTime = clock();
+   cout << " - Start: " << to_string(startTime) << endl << endl;
+   cout << "    sorting...\n\n";
    MergeSort(mergeArray, 0, arraySize - 1);
-   cout << " - End:   " << endl << endl;
+   endTime = clock();
+   cout << " - End:   " << to_string(endTime) << endl;
+   totalTime = CalcTotalTime(startTime, endTime);
+   cout << "Total time elapsed: " << totalTime << " seconds\n\n\n";
+   UpdateFastestAndSlowest(totalTime, fastestTime, slowestTime, "Merge Sort",
+                            fastestSortName, slowestSortName);
 
    cout << "Now running Quick Sort\n";
-   cout << " - Start: " << endl;
+   startTime = clock();
+   cout << " - Start: " << to_string(startTime) << endl << endl;
+   cout << "    sorting...\n\n";
    QuickSort(quickArray, 0, arraySize - 1);
-   cout << " - End:   " << endl << endl;
+   endTime = clock();
+   cout << " - End:   " << to_string(endTime) << endl;
+   totalTime = CalcTotalTime(startTime, endTime);
+   cout << "Total time elapsed: " << totalTime << " seconds\n\n\n";
+   UpdateFastestAndSlowest(totalTime, fastestTime, slowestTime, "Quick Sort",
+                            fastestSortName, slowestSortName);
 
    if(printArrayBool)
    {
      cout << "\n * Sorted order *\n";
      PrintDynamicArray("Bubble Array", bubbleArray, arraySize);
    }
+
+   cout << "Fastest and Slowest\n\n";
+   cout << " - The slowest sorting algorithm was " << slowestSortName << " and took " << slowestTime << " seconds to complete.\n";
+   cout << " - The fastest sorting algorithm was " << fastestSortName << " and took " << fastestTime << " seconds to complete.\n\n";
+   cout << fastestSortName << " was " << slowestTime - fastestTime << " seconds faster than " << slowestSortName << endl;
+
+
 
    cout << "\n\nThank you!\n\n";
    return 0;

@@ -220,3 +220,24 @@
      duplicateArray[i] = origionalArray[i];
    }
  }
+
+ double CalcTotalTime(double startTime, double endTime)
+ {
+   return ((double)(endTime - startTime)) / CLOCKS_PER_SEC;
+ }
+
+ void UpdateFastestAndSlowest(double newTime, double &fastestTime, double &slowestTime,
+                 string newSortName, string &fastestSortName, string &slowestSortName)
+ {
+   if(newTime < fastestTime || fastestTime == 0)
+   {
+     fastestTime = newTime;
+     fastestSortName = newSortName;
+   }
+
+   if(newTime > slowestTime || slowestTime == 0)
+   {
+     slowestTime = newTime;
+     slowestSortName = newSortName;
+   }
+ }
