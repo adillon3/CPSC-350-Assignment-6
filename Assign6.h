@@ -10,6 +10,7 @@ using namespace std;
 
 #include <string>
 #include <fstream>
+#include <ctime>
 
 string GetFileName();
 void CheckFileNameValid(string& fileName);
@@ -18,6 +19,6 @@ int GetMenuInput(const string initialMessage, const int numMenuOptions);
 int GetPositiveIntFromConsole(string itemsToGetNumberOf);
 
 void GenerateRandomValuesForArray(float *&array, int numberOfValues);
-void FillInArrayFromFile(float *&array, string fileName);
+void CreateArrayFromFile(float *&array, int &arraySize, string fileName);
 void PrintDynamicArray(string arrayName, float *&array, int arraySize);
 void CopyArray(float *&origionalArray, int arraySize, float *&duplicateArray);

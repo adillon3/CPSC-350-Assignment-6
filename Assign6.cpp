@@ -154,13 +154,39 @@
 
    for(int i = 0; i < numberOfValues; ++i)
    {
-     array[i] = ((float) rand()) / (float) RAND_MAX;
+     array[i] = (rand() / (float)RAND_MAX * 9999) + 1;
    }
  }
 
- void FillInArrayFromFile(float *&array, string fileName)
+ void CreateArrayFromFile(float *&array, int &arraySize, string fileName)
  {
+   float tempValue;
+   ifstream inFile;
+   inFile.open(fileName.c_str());
 
+   inFile >> arraySize;
+
+   if(array != nullptr)
+   {
+     delete[] array;
+   }
+
+   array = new float[arraySize];
+
+   for(int i = 0; i < arraySize; ++i)
+   {
+     inFile >> tempValue;
+     if(inFile.fail())
+     {
+       inFile.clear();
+       inFile.ignore(100000000, '\n');
+       throw "Sorry, file not formatted correctly\n";
+     }
+
+     array[i] = tempValue;
+   }//for(int i = 0; i < numStudentsAtTime; ++i)
+
+   inFile.close();
  }
 
  void PrintDynamicArray(string arrayName, float *&array, int arraySize)

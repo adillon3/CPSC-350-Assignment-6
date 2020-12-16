@@ -5,8 +5,17 @@
  * Assignment 06
  *******************************/
 
+Bonus Features
+ - If the user doesn't initially provide a file, the program will prompt them
+   to either enter a file name or generate a random list of values (the length
+   of which will be entered by the user)
+
 Help passing dynamic arrays
  https://www.google.com/search?q=passing+a+dynamic+array+to+a+function+c%2B%2B&rlz=1C1CHBD_enUS899US899&oq=passing+a+dynamic+arr&aqs=chrome.0.0i457j69i57j0i22i30l6.3731j1j7&sourceid=chrome&ie=UTF-8#kpvalbx=_1VTZX-DDGuKz0PEPhOmE0Ag11
 
 Generating random floats
  https://stackoverflow.com/questions/5289613/generate-random-float-between-two-floats/5289624
+ http://www.cplusplus.com/forum/beginner/81180/
+
+Help with <ctime>
+ https://www.geeksforgeeks.org/ctime-function-in-c-c/
