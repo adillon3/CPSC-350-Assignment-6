@@ -179,3 +179,18 @@
    }
    cout << endl;
  }
+
+ void CopyArray(float *&origionalArray, int arraySize, float *&duplicateArray)
+ {
+   if(duplicateArray != nullptr)
+   {
+     delete[] duplicateArray;
+   }
+
+   duplicateArray = new float[arraySize];
+
+   for(int i = 0; i < arraySize; ++i)
+   {
+     duplicateArray[i] = origionalArray[i];
+   }
+ }

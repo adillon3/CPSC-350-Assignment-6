@@ -20,3 +20,4 @@ int GetPositiveIntFromConsole(string itemsToGetNumberOf);
 void GenerateRandomValuesForArray(float *&array, int numberOfValues);
 void FillInArrayFromFile(float *&array, string fileName);
 void PrintDynamicArray(string arrayName, float *&array, int arraySize);
+void CopyArray(float *&origionalArray, int arraySize, float *&duplicateArray);
