@@ -28,12 +28,12 @@
    string slowestSortName;
 
    //Array variables
-   int    arraySize      = 0;
-   float* bubbleArray    = nullptr;
-   float* insertArray    = nullptr;
-   float* selectionArray = nullptr;
-   float* mergeArray     = nullptr;
-   float* quickArray     = nullptr;
+   int    arraySize       = 0;
+   double* bubbleArray    = nullptr;
+   double* insertArray    = nullptr;
+   double* selectionArray = nullptr;
+   double* mergeArray     = nullptr;
+   double* quickArray     = nullptr;
    string fileName;
 
    //Getting input if commandline is blank

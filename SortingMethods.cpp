@@ -7,7 +7,7 @@
 
 #include "SortingMethods.h"
 
-void BubbleSort(float *&array, int arraySize)
+void BubbleSort(double *&array, int arraySize)
 {
   for (int i = 0; i < arraySize - 1; ++i)
   {
@@ -16,7 +16,7 @@ void BubbleSort(float *&array, int arraySize)
     {
       if (array[j] > array[j + 1])
       {
-        float temp = array[j];
+        double temp = array[j];
         array[j] = array[j + 1];
         array[j + 1] = temp;
       }
@@ -24,10 +24,10 @@ void BubbleSort(float *&array, int arraySize)
   }
 }
 
-void SelectionSort(float *&array, int arraySize)
+void SelectionSort(double *&array, int arraySize)
 {
   int minimumIndex;
-  float temp;
+  double temp;
 
   // One by one move boundary of unsorted subarray
   for(int i = 0; i < arraySize - 1; i++)
@@ -49,9 +49,9 @@ void SelectionSort(float *&array, int arraySize)
   }//END for(int i = 0; i < n - 1; i++)
 }
 
-void InsertionSort(float *&array, int arraySize)
+void InsertionSort(double *&array, int arraySize)
 {
-  float key = 0;
+  double key = 0;
   int j   = 0;
 
   for(int i = 1; i < arraySize; i++)
@@ -68,13 +68,13 @@ void InsertionSort(float *&array, int arraySize)
   }//END for(int i = 1; i < arraySize; i++)
 }
 
-void Merge(float *&array, int low, int mid, int high)
+void Merge(double *&array, int low, int mid, int high)
 {
   int leftSize = mid - low + 1;
   int rightSize = high - mid;
 
-  float leftAr[leftSize];
-  float rightAr[rightSize];
+  double leftAr[leftSize];
+  double rightAr[rightSize];
 
   for (int i = 0; i < leftSize; i++)
   {
@@ -120,7 +120,7 @@ void Merge(float *&array, int low, int mid, int high)
   }
 }
 
-void MergeSort(float *&array, int low, int high)
+void MergeSort(double *&array, int low, int high)
 {
   if(low >= high)
   {
@@ -134,9 +134,9 @@ void MergeSort(float *&array, int low, int high)
   Merge(array, low, mid, high);
 }
 
-int Partition (float *&array, int low, int high)
+int Partition (double *&array, int low, int high)
 {
-  float pivotIndex = array[high];
+  double pivotIndex = array[high];
   int i = (low - 1);
 
   for(int j = low; j <= high - 1; j++)
@@ -145,20 +145,20 @@ int Partition (float *&array, int low, int high)
     {
       i++;
       //swapping
-      float temp = array[i];
+      double temp = array[i];
       array[i] = array[j];
       array[j] = temp;
     }
   }
   //swapping
-  float temp = array[i + 1];
+  double temp = array[i + 1];
   array[i + 1] = array[high];
   array[high] = temp;
 
   return (i + 1);
 }
 
-void QuickSort(float *&array, int low, int high)
+void QuickSort(double *&array, int low, int high)
 {
   if(low < high)
   {

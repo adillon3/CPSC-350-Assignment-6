@@ -146,21 +146,21 @@
    return returnInt;
  }
 
- void GenerateRandomValuesForArray(float *&array, int numberOfValues)
+ void GenerateRandomValuesForArray(double *&array, int numberOfValues)
  {
-   array = new float[numberOfValues];
+   array = new double[numberOfValues];
 
    srand (time(NULL));
 
    for(int i = 0; i < numberOfValues; ++i)
    {
-     array[i] = (rand() / (float)RAND_MAX * 9999) + 1;
+     array[i] = (rand() / (double)RAND_MAX * 9999) + 1;
    }
  }
 
- void CreateArrayFromFile(float *&array, int &arraySize, string fileName)
+ void CreateArrayFromFile(double *&array, int &arraySize, string fileName)
  {
-   float tempValue;
+   double tempValue;
    ifstream inFile;
    inFile.open(fileName.c_str());
 
@@ -171,7 +171,7 @@
      delete[] array;
    }
 
-   array = new float[arraySize];
+   array = new double[arraySize];
 
    for(int i = 0; i < arraySize; ++i)
    {
@@ -189,7 +189,7 @@
    inFile.close();
  }
 
- void PrintDynamicArray(string arrayName, float *&array, int arraySize)
+ void PrintDynamicArray(string arrayName, double *&array, int arraySize)
  {
    if(array == nullptr)
    {
@@ -206,14 +206,14 @@
    cout << endl;
  }
 
- void CopyArray(float *&origionalArray, int arraySize, float *&duplicateArray)
+ void CopyArray(double *&origionalArray, int arraySize, double *&duplicateArray)
  {
    if(duplicateArray != nullptr)
    {
      delete[] duplicateArray;
    }
 
-   duplicateArray = new float[arraySize];
+   duplicateArray = new double[arraySize];
 
    for(int i = 0; i < arraySize; ++i)
    {

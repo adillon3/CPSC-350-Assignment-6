@@ -13,13 +13,13 @@
  #include <string>
  #include <fstream>
 
-void BubbleSort(float *&array, int arraySize);
-void SelectionSort(float *&array, int arraySize);
-void InsertionSort(float *&array, int arraySize);
-void Merge(float *&array, int low, int mid, int high);
-void MergeSort(float *&array, int low, int high);
-int Partition (float *&array, int low, int high);
-void QuickSort(float *&array, int low, int high);
+void BubbleSort(double *&array, int arraySize);
+void SelectionSort(double *&array, int arraySize);
+void InsertionSort(double *&array, int arraySize);
+void Merge(double *&array, int low, int mid, int high);
+void MergeSort(double *&array, int low, int high);
+int Partition (double *&array, int low, int high);
+void QuickSort(double *&array, int low, int high);
 
 
  #endif // SORTINGMETHODS_H_
