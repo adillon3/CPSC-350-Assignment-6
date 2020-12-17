@@ -85,7 +85,7 @@
    }
 
 
-
+   cout << fixed;
 
    cout << "Now running Bubble Sort\n";
    startTime = clock();
